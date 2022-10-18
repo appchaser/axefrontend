@@ -1,0 +1,69 @@
+
+
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="saveTutorial()">
+
+    <div class="form-group input-group-lg">
+      <label for="client">client</label>
+      <input
+        type="text"
+        class="form-control"
+        id="client"
+        formControlName="client"
+        required
+        [(ngModel)]="axe.client"
+        name="client"
+      />
+  </div>
+
+
+
+
+      <!-- <div class="form-group input-group-lg">
+        <label for="description">country</label>
+        <input
+          class="form-control"
+          id="country"
+          formControlName="country"
+          required
+
+          [(ngModel)]="axe.country"
+          name="country"
+        />
+      </div> -->
+      <label for="country">country</label>
+      <div class="container mt-1">
+      <select class="form-select" (change)="onchange($any($event.target).value)">
+        <option *ngFor="let n of ngOption">{{n.name}}</option>
+
+      </select>
+
+    </div>
+<br>
+      <div class="form-group input-group-lg">
+        <label for="file">file</label>
+        <input
+          type="file"
+          (change)="onFileSelect($event)"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="form-group input-group-lg">
+        <label for="date">date</label>
+        <input
+          type="date"
+          class="form-control"
+          id="date"
+          formControlName="date"
+          required
+          [(ngModel)]="axe.date"
+          name="date"
+        />
+      </div>
+      <div class="form-group">
+        <button class="btn btn-danger btn-block btn-lg">Create</button>
+    </div>
+
+  </form>
+</div>

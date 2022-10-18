@@ -1,0 +1,24 @@
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">client</th>
+        <th scope="col">country</th>
+        <th scope="col">size</th>
+        <th scope="col">name</th>
+        <th scope="col">download</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let axe of axes">
+        <td>{{axe.client}}</td>
+        <td>{{axe.country}}</td>
+        <td>{{axe.size}} Ko</td>
+        <td>{{axe.name}}</td>
+        <td><a href="{{ axe.url }}" >Download file</a></td>
+      </tr>
+
+    </tbody>
+  </table>
+
